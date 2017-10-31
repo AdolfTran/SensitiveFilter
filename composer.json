@@ -1,6 +1,6 @@
 {
-    "name": "duc/example",
-    "description": "The example",
+    "name": "ductran/SensitiveFilter",
+    "description": "Hide sensitive data in string",
     "type": "library",
     "license": "MIT",
     "authors": [
