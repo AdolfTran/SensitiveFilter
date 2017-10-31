@@ -1,0 +1,13 @@
+{
+    "name": "duc/example",
+    "description": "The example",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Trần Minh Đức",
+            "email": "haiyenho2201@gmail.com"
+        }
+    ],
+    "require": {}
+}
