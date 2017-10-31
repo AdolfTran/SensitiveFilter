@@ -37,7 +37,7 @@ class EmailProcessor implements ProcessorInterface
     /**
      * Return an array of emails
      *
-     * @param string $email
+     * @param string $string
      * @return array|bool
      */
     public function getEmails($string)

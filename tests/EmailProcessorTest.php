@@ -5,24 +5,24 @@
  * Date: 31/10/2017
  * Time: 11:30
  */
-use JC\Example\Example;
+use Ductran\SensitiveFilter\EmailProcessor;
 
-class ExampleTest extends PHPUnit_Framework_TestCase
+class EmailProcessorTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider dataProviderForGetEmails
      */
     public function testGetEmails($input, $output){
-        $example = new Example();
-        self::assertEquals($output, $example->getEmails($input));
+        $emailProcesscor = new EmailProcessor();
+        self::assertEquals($output, $emailProcesscor->getEmails($input));
     }
 
     /**
-     * @dataProvider dataProviderForHideEmail
+     * @dataProvider dataProviderForProcess
      */
-    public function testHideEmail($input, $output){
-        $example = new Example();
-        self::assertEquals($output, $example->hideEmail($input));
+    public function testProcess($input, $output){
+        $emailProcesscor = new EmailProcessor();
+        self::assertEquals($output, $emailProcesscor->process($input));
     }
 
     public function dataProviderForGetEmails()
@@ -35,7 +35,7 @@ class ExampleTest extends PHPUnit_Framework_TestCase
         ];
     }
 
-    public function dataProviderForHideEmail()
+    public function dataProviderForProcess()
     {
         return [
             ['duc@gmail.com', '***@*****.***'],
