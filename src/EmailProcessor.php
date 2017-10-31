@@ -6,16 +6,28 @@
  * Time: 10:18
  */
 
-namespace JC\Example;
+namespace Ductran\SensitiveFilter;
 
 
-class Example
+class EmailProcessor implements ProcessorInterface
 {
-    public function hideEmail($string, $replaceText = "*")
+    public $replaceChar;
+
+    /**
+     * EmailProcessor constructor.
+     * @param $replaceChar
+     */
+    public function __construct($replaceChar = '*')
+    {
+        $this->replaceChar = $replaceChar;
+    }
+
+
+    public function process($string)
     {
         if($emails = $this->getEmails($string)){
             foreach ($emails as $email){
-                $string = str_replace($email, preg_replace('/[a-zA-Z0-9]{1}/', $replaceText, $email), $string);
+                $string = str_replace($email, preg_replace('/[a-zA-Z0-9]{1}/', $this->replaceChar, $email), $string);
             }
         }
 
