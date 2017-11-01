@@ -1,11 +1,11 @@
 {
-    "name": "ductran/SensitiveFilter",
-    "description": "Hide sensitive data in string",
+    "name": "ductran/sensitive-filter",
+    "description": "Detect & Hide sensitive data in string",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Trần Minh Đức",
+            "name": "Duc Tran",
             "email": "haiyenho2201@gmail.com"
         }
     ],
