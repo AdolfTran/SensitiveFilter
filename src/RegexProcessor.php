@@ -28,14 +28,18 @@ class RegexProcessor implements ProcessorInterface
                 $replaceString = $this->getReplaceString(strlen($regex));
                 $string = str_replace($regex,$replaceString,$string );
             }
+            return $this->process($string);
+        } else {
+            return $string;
         }
-        return $string;
     }
 
     public function getRegex($inputString){
         $arrayOfRegexStrings = array();
+
         preg_match($this->regex, $inputString, $matchRegexStrings, PREG_OFFSET_CAPTURE);
         if (!empty($matchRegexStrings)){
+
             foreach ($matchRegexStrings as $matchString){
                 if(!empty($matchString[0])) $arrayOfRegexStrings[] = $matchString[0];
             }

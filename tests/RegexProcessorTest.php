@@ -11,15 +11,15 @@ class RegexProcessorTest extends PHPUnit_Framework_TestCase
 
     public function dataProviderForGetRegex(){
     return [
-        ['/[0-9]{10}/', 'ntkhuyencntt@gmail.com 0979306603 ntkhuyen@yahoo.com','0979306603'],
+        ['/[0-9]{10}/', 'ntkhuyencntt@gmail.com 0979306603 ntkhuyen@yahoo.com 0934909891','0979306603'],
         ['/([a-z0-9_-]{6,18})/', '$$$^^^&[myp4ssw0rd]','myp4ssw0rd']
     ];
     }
 
     public function dataProviderForProcess(){
         return [
-            ['/[0-9]{10}/', 'ntkhuyencntt@gmail.com 0979306603 ntkhuyen@yahoo.com','ntkhuyencntt@gmail.com ********** ntkhuyen@yahoo.com'],
-            ['/([a-z0-9_-]{6,18})/', '$$$^^^&[myp4ssw0rd]','$$$^^^&[**********]']
+            ['/[0-9]{10}/', 'ntkhuyencntt@gmail.com 0979306603 ntkhuyen@yahoo.com 0934909891','ntkhuyencntt@gmail.com ********** ntkhuyen@yahoo.com **********'],
+            ['/([a-z0-9_-]{6,18})/', '$$$^^^&[myp4ssw0rd 123 myp4ssw0rd]','$$$^^^&[********** 123 **********]']
         ];
     }
 
