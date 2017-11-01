@@ -10,16 +10,33 @@
 namespace Ductran\SensitiveFilter\Facades;
 
 use Ductran\SensitiveFilter\IdCardProcessor;
-use Ductran\SensitiveFilter\RegexProcessor;
+use \Ductran\SensitiveFilter\SensitiveFilter as Filter;
 
 class SensitiveFilter
 {
-    public static function filter($string){
-        $filter = new \Ductran\SensitiveFilter\SensitiveFilter();
-        $filter->addProcessor(new \Ductran\SensitiveFilter\EmailProcessor());
-        $filter->addProcessor(new IdCardProcessor());
-        $filter->addProcessor(new RegexProcessor());
+    /**
+     * @var Filter
+     */
+    public static $filter;
 
-        return $filter->filter($string);
+    public function filter($string){
+        if(is_null(static::$filter)){
+            static::$filter = new \Ductran\SensitiveFilter\SensitiveFilter();
+        }
+
+        static::$filter->addProcessor(new \Ductran\SensitiveFilter\EmailProcessor());
+        static::$filter->addProcessor(new IdCardProcessor());
+
+        return static::$filter->filter($string);
+    }
+
+    public static function on(){
+         static::$filter = (new Filter());
+         return new static();
+    }
+
+    public function withRegex($regex){
+        static::$filter = static::$filter->withRegex($regex);
+        return $this;
     }
 }

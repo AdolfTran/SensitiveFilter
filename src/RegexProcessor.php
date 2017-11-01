@@ -14,7 +14,7 @@ class RegexProcessor implements ProcessorInterface
     public $regex;
     public $replaceChar;
 
-    public function __construct($regex = "/[0-9]{10}/", $replaceChar = "*")
+    public function __construct($regex, $replaceChar = "*")
     {
         $this->replaceChar = $replaceChar;
         $this->regex = $regex;
@@ -36,7 +36,6 @@ class RegexProcessor implements ProcessorInterface
 
     public function getRegex($inputString){
         $arrayOfRegexStrings = array();
-
         preg_match($this->regex, $inputString, $matchRegexStrings, PREG_OFFSET_CAPTURE);
         if (!empty($matchRegexStrings)){
 

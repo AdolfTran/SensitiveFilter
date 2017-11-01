@@ -13,13 +13,12 @@ class SensitiveFilterTest extends PHPUnit_Framework_TestCase
     public function testFilter(){
         $filter = new \Ductran\SensitiveFilter\SensitiveFilter();
         $filter->addProcessor(new \Ductran\SensitiveFilter\EmailProcessor());
-        //$filter->withRegex("\\b")->withRegex()->filter($input);
 
         $input = 'duc@gmail.com adasd dm@gmail.com';
-        $output = $filter->filter($input);
+        echo $filter->filter($input);
     }
 
     public function testFacade(){
-        SensitiveFilter::filter("$$$^^^&[myp4ssw0rd]");
+       echo SensitiveFilter::on()->withRegex('/[0-9]{10}/')->withRegex('/([a-z0-9_-]{6,9})/')->filter('$$$^^^&[myp4ssw0rd] 0979306603');
     }
 }

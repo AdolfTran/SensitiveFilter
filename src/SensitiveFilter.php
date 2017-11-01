@@ -29,7 +29,7 @@ class SensitiveFilter
     }
 
     public function withRegex($regexString){
-        $this->addProcessor(new RegexProcessor());
+        $this->addProcessor(new RegexProcessor($regexString));
 
         return $this;
     }
