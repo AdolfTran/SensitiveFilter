@@ -10,6 +10,7 @@
 namespace Ductran\SensitiveFilter\Facades;
 
 use Ductran\SensitiveFilter\IdCardProcessor;
+use Ductran\SensitiveFilter\RegexProcessor;
 
 class SensitiveFilter
 {
@@ -17,6 +18,7 @@ class SensitiveFilter
         $filter = new \Ductran\SensitiveFilter\SensitiveFilter();
         $filter->addProcessor(new \Ductran\SensitiveFilter\EmailProcessor());
         $filter->addProcessor(new IdCardProcessor());
+        $filter->addProcessor(new RegexProcessor());
 
         return $filter->filter($string);
     }
