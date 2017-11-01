@@ -27,4 +27,10 @@ class SensitiveFilter
 
         return $string;
     }
+
+    public function withRegex($regexString){
+        $this->addProcessor(new RegexProcessor()->setRegex("\\b")):
+
+        return $this;
+    }
 }
