@@ -1,17 +1,32 @@
 # Sensitive Filter
-Hide sensitive text in string
+Hide sensitive information in string
 
 ## Installation
 `$ composer require ductran/sensitive-filter`
 
-#### Quick start
+## Usage
+
 ```PHP
 use \Ductran\SensitiveFilter\Facades\SensitiveFilter;
-
-// example hide sensitive
-SensitiveFilter::on()->withRegex('/[0-9]{10}/')->withRegex('/([a-z0-9_-]{6,9})/')->filter('$$$^^^&[myp4ssw0rd] 0979306603');
 ```
-
+#### Hide Email
+```PHP
+  $filter = new \Ductran\SensitiveFilter\SensitiveFilter();
+  $filter->addProcessor(new \Ductran\SensitiveFilter\EmailProcessor());
+  echo $filter->filter('duc@gmail.com adasd test@gmail.com');
+```
+  
+#### Hide Id Card
+```PHP
+  $filter = new \Ductran\SensitiveFilter\SensitiveFilter();
+  $filter->addProcessor(new \Ductran\SensitiveFilter\IdCardProcessor());
+  echo $filter->filter('dadads2478-8339-3242-2423dsdsa2478-8339-3242-2424');
+  ```
+  
+#### Hide string matching regex string 
+```PHP
+  SensitiveFilter::on()->withRegex('/[0-9]{10}/')->withRegex('/([a-z0-9_-]{6,9})/')->filter('$$$^^^&[myp4ssw0rd] 0979306603');
+  ```
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `$ git checkout -b feature/your-new-feature`
