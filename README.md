@@ -35,3 +35,4 @@ use \Ductran\SensitiveFilter\Facades\SensitiveFilter;
 5. Submit a pull request.
 
 ## License
+MIT License
