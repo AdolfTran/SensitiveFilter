@@ -3,8 +3,8 @@ Hide sensitive information in string
 
 [![Packagist](https://img.shields.io/packagist/v/ductran/sensitive-filter.svg)](https://packagist.org/packages/ductran/sensitive-filter)
 [![Packagist](https://img.shields.io/packagist/dt/ductran/sensitive-filter.svg)](https://packagist.org/packages/ductran/sensitive-filter)
-[![Travis](https://img.shields.io/travis/minhduc1/SensitiveFilter.svg)](https://travis-ci.org/minhduc1/SensitiveFilter)
-[![Codecov](https://img.shields.io/codecov/c/github/minhduc1/SensitiveFilter.svg)](https://codecov.io/gh/minhduc1/SensitiveFilter)
+[![Travis](https://img.shields.io/travis/AdolfTran/SensitiveFilter.svg)](https://travis-ci.org/minhduc1/SensitiveFilter)
+[![Codecov](https://img.shields.io/codecov/c/github/AdolfTran/SensitiveFilter.svg)](https://codecov.io/gh/AdolfTran/SensitiveFilter)
 [![Packagist](https://img.shields.io/packagist/l/ductran/sensitive-filter.svg)](https://packagist.org/packages/ductran/sensitive-filter)
 
 ## Installation
